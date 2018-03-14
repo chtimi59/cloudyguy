@@ -31,15 +31,21 @@ d_start () {
         IP=`ip addr show eth0 | grep "inet " | cut -d '/' -f1 | cut -d ' ' -f6`
         PUBLIC_IP=`curl -s checkip.dyndns.org --max-time 3 | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'`
         
-        if [ ! -z $MAC ] && [ ! -z $IP ] && [ ! -z $PUBLIC_IP ]
+        if [ ! -z $MAC ] || [ ! -z $IP ] || [ ! -z $PUBLIC_IP ]
         then
             JSON="\"mac\":\"$MAC\""
             JSON=$JSON",\"ip\":\"$IP\""
             JSON=$JSON",\"public\":\"$PUBLIC_IP\""
             JSON="{$JSON}"
-            curl --max-time 3 --fail -s -H "Content-Type: application/json" -X POST -d $JSON http://192.168.0.162/cloudyguy/api/heartbeat >/dev/null
+            log_success_msg "update: [$MAC] [$IP] [$PUBLIC_IP]"
+            if `curl --max-time 3 --fail -s -H "Content-Type: application/json" -X POST -d $JSON http://jdo-dev.org/cloudyguy/api/heartbeat >/dev/null`
+            then
+                log_success_msg "hearbeat sent"
+            else
+                log_failure_msg "hearbeat not sent"
+            fi
         fi
-        sleep 5 #5 sec
+        sleep 600 #10mn
     done
 }
 
