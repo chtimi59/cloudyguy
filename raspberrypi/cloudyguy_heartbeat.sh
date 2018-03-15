@@ -3,7 +3,7 @@
 # Provides:          cloudyguy_heartbeat.sh
 # Required-Start:
 # Required-Stop:
-# Default-Start:     5
+# Default-Start:     2
 # Default-Stop:
 # Short-Description: Send heart beat to master server
 # Description:       Send heart beat to master server
@@ -14,7 +14,7 @@
 # however retro-compatibility is still in place
 
 daemon_NAME="cloudyguy_heartbeat.sh"
-export PIDFILE=/tmpcloudyguy_heartbeat
+export PIDFILE=/tmp/cloudyguy_heartbeat
 PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 
 #install
