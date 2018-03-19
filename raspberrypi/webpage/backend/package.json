@@ -1,0 +1,18 @@
+{
+  "name": "piovpn_backend",
+  "version": "1.0.0",
+  "description": "NodeJS Backend for piovpn",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Jan d'Orgeville",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.11.1",
+    "@types/node": "^9.4.7",
+    "chalk": "^2.3.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "fs-extra": "^5.0.0"
+  }
+}

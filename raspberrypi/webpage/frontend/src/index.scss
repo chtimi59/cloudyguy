@@ -1,0 +1,19 @@
+@import './styles/reset';
+@import './styles/common';
+
+html, body {
+    font-family: arial !important;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#appRoot{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    [data-reactroot]{
+        height:100%;
+    }
+}
