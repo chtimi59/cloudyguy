@@ -6,7 +6,7 @@ import * as xact from "../../actions";
 interface P {}
 
 const mapStateToProps = (s: ReduxState) => {
-    let values: rcom.PValues = {        
+    let values: rcom.PValues = {
     };
     return { values }
 };

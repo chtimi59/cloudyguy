@@ -1,5 +1,6 @@
 import './style.scss';
 import * as React from 'react';
+import * as ReactBootstrap from 'react-bootstrap';
 
 export interface P {
     values: PValues,
@@ -15,8 +16,9 @@ export class Component extends React.Component<P, S>{
     }
 
     render() {
-        <div className="app">
-            Hello World!
-        </div>
+        return(<div className="app">
+            Hello World !<br />
+            <ReactBootstrap.Button bsStyle="success" >asd</ReactBootstrap.Button >
+        </div>)
     }
 }
