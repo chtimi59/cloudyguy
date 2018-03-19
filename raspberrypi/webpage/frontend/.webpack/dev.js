@@ -8,6 +8,7 @@ exports.conf = merge(com.conf, {
 
   output: {
     filename: 'bundle.js',
+    path: com.root_path + '/build',
   },
 
   devtool: 'source-map', 
